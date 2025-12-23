@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
   금일 학습내용 GET방식으로 jsp에 입력한 값 출력하기
   지금 코드는 index.jsp에서 form태그 안에 있는 input태그를 이용하여 값을 입력한뒤
   index서블릿에서 입력한 값을 받아서 다시 jsp로 보내는 방식을 사용하였다.
+  index서블릿은 순수하게 WEB-INF에 있는 jsp에 연결하기 위한 서블릿으로 역할을 구분하였고
+  입력값을 받을 서블릿을 추가 구현 하였다.
 */
 
 @WebServlet("/index.do")
@@ -20,8 +22,6 @@ public class IndexServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		String name = req.getParameter("name");
-		req.setAttribute("name", name);
 		
 		req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp); // 현 지식 수준에선 포워드 잊지말것
 		// 포워드 없으면 값이 안넘어간다. 포워드를 입력하므로써 요청 응답 싹다 들고 jsp로 가는거다.
