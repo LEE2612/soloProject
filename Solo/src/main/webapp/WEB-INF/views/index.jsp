@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>hi!Servlet!</h1>
-<form action="submit.do" method="get" enctype="application/x-www-form-urlencoded">
+<form action="index.do" method="get" enctype="application/x-www-form-urlencoded">
 <!-- form태그는 액션 메서드 인크타입 국룰 잊지말것 태그 같은건 외우면 좋지만 그때그때 찾아가면서 자연스럽게 익혀갈것 -->
 	<h2>ha!haha!</h2>
 	<ul>
@@ -19,7 +19,6 @@
 	<input type="text" name="name" />
 	<button type="submit"> 전송버튼 </button>
 </form>
-
-<h4>입력한 값 : <%= request.getAttribute("name") %></h4>
+입력값 : ${name }
 </body>
 </html>
