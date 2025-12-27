@@ -1,0 +1,10 @@
+/target/
+/bin/
+.settings/
+.classpath
+.project
+.factorypath
+*.class
+pom.properties
+.DS_Store
+Thumbs.db

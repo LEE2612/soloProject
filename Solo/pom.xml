@@ -2,25 +2,26 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>kr.or.ddit</groupId>
+	<groupId>kr.or.hi</groupId>
 	<artifactId>Solo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 요기서 부터 끝까지 복사 -->
 	<build>
-    <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.11.0</version>
-            <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            </configuration>
-        </plugin>
-    </plugins>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
-	<properties>
 		
+	<properties>
+
 		<java-version>1.8</java-version>
 		<org.aspectj-version>1.9.19</org.aspectj-version>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -32,28 +33,37 @@
 	</properties>
 	<dependencies>
 		
+		<!-- 서블릿 4.0 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- JSP 2.3 -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!--JSTL 1.2-->
 		<dependency>
 		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>4.0.1</version>
-		    <scope>provided</scope>
-		</dependency>
-		
-		<dependency>
-		    <groupId>javax.servlet.jsp</groupId>
-		    <artifactId>javax.servlet.jsp-api</artifactId>
-		    <version>2.3.3</version>
-		    <scope>provided</scope>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
 		</dependency>
 
-		
+		<!--Domin Layer를 개발하기 위해 사용-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -65,7 +75,47 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.4.14</version>
 		</dependency>
+
+		<!--db jdbc-->
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc17</artifactId>
+			<version>23.26.0.0.0</version>
+		</dependency>
+		<!--  IoC(Inversion Of Control, 제어의 역전) / DI (Dependency Injection, 의존성
+		주입)
+			IoC / DI 패턴이 적용된 경우, framework라 지칭함.
+			sql mapper, data mapper, persistence framework, ORM  -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.19</version>
+		</dependency>
+
+		<!--java.lang 패키지의 기본 api를 확장해 사용할 수 있음. -->
+		<!--StringUtuls, WordUtils, ClassUtils, Failable...-->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.20.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>2.23.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+			<version>1.16</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>2.0.17</version>
+		</dependency>
+		
 	</dependencies>
-
-
 </project>
